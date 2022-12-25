@@ -1,15 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deleteTodo, toggleTodo } from "../modules/todos";
+import { todosActions } from "../modules/todos";
 
 const TodoItem = ({ item, isActive }) => {
   const dispatch = useDispatch();
   const handleToggleBtn = (id) => {
-    dispatch(toggleTodo(id));
+    // dispatch(toggleTodo(id));
+    dispatch(todosActions.toggleTodo(id));
   };
   const handleDeleteBtn = (id) => {
-    dispatch(deleteTodo(id));
+    // dispatch(deleteTodo(id));
+    dispatch(todosActions.deleteTodo(id));
   };
   const navigate = useNavigate();
   return (

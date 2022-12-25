@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { addTodo } from "../modules/todos";
+import { todosActions } from "../modules/todos";
 
 const Input = () => {
   const [title, setTitle] = useState("");
@@ -17,7 +17,8 @@ const Input = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo(newTodo));
+    // dispatch(addTodo(newTodo));
+    dispatch(todosActions.addTodo(newTodo));
   };
 
   const handleTitle = (e) => {
